@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tutoriales</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+   
+    <ion-title>Ház mas, reciclando y reutilizando</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <img src="./assets/manualidad.jpg" />
+    
+    <ion-card-header>
+      <ion-text color="secondary">
+        <h2>Dale un nuevo uso a todo.</h2>
+      </ion-text>
+    
+    </ion-card-header>
+    <img src="./assets/creatividad.jpg" />
+    <ion-card-content>
+      <ion-text color="secondary">
+        <div id="container">
+          <strong class="capitalize">{{ folder }}</strong>
+          <p>Encuentra <a target="_blank" rel="noopener noreferrer" href="https://dcrecicla.site/DCRecicla/site/tutoriales">Tutoriales Acá</a></p>
+        </div>
+       
+       
+      </ion-text>
+
+      
+    </ion-card-content>
+  </ion-card>
+
+ 
+</ion-content>
+
