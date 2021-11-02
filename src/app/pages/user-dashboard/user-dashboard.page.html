@@ -11,12 +11,13 @@
       <ion-menu-button></ion-menu-button>
      
     </ion-buttons>
-    <ion-title> Ciudadano </ion-title>
+    <ion-title>  </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-header translucent>
   <ion-toolbar>
-    <ion-title>Recicla, Recoge, Reutiliza</ion-title>
+    <ion-title>¡Hola, Bienvendi@!</ion-title>
+    <p>"direccion"</p>
   </ion-toolbar>
 </ion-header>
 
@@ -25,58 +26,39 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content></ion-refresher-content>
 	</ion-refresher>
+  <ion-card>
   <ion-slides>
-
     <ion-slide>
       <div class="slide">
         <img src="./assets/slide.jpg"/>
-        <h2>Bienvenido</h2>
-        <p>La <b>vida</b> es una, vive y cuida el ambiente.</p>
+        <h2>TallKing</h2>
+        <p>Una app que te mostrara los lugares mas cercanos a tu ubicacion en donde podras encontrar talleres y parqueaderos de bicicletas</p>
       </div>
     </ion-slide>
 
     <ion-slide>
-      <img src="./assets/slide-2.jpg"/>
-      <h2>Que es DCRecicla?</h2>
-      <p><b>DC Recicla</b> es la alternativa perfecta para ayudar a todos los usuarios sistema de Aseo.</p>
+      <img src="./assets/taller.jpg"/>
+      <h3>"Cuida tu bicicleta, dejala en un lugar seguro y siempre usa las protecciones necesarias"</h3>
     </ion-slide>
-
-    <ion-slide>
-      <img src="./assets/slide-3.jpg"/>
-      <h2>Necesita reportar algun problema?</h2>
-      <p><b>DC Recicla</b> lo ayuda a ponerse en contacto con la empresa, para cualquier tipo de denuncia ciudadanas.</p>
-    </ion-slide>
-
-    <ion-slide>
-      <img src="./assets/slide-4.jpg"/>
-      <h2>Listo para Salvar el mundo?</h2>
-      <ion-button fill="clear">Ir <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
-    </ion-slide>
-
   </ion-slides>
-
-
+  </ion-card>
+  
   <ion-card>
-    <img src="./assets/medioamb.jpg" />
+    <img src="./assets/taller.jpg" />
     <ion-card-header>
       <ion-text color="secondary">
-        <h2>El Mejor Paisaje Debe Ser Verde</h2>
+        <h2>No te quedes varado!!</h2>
+        <h2>Busca aqui el lugar mas cercano donde arreglar tu bicicleta</h2>
       </ion-text>
       
-      <ion-card-title>El deber es de todos!</ion-card-title>
+      <ion-card-title></ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-text color="secondary">
-        <h3>"Si supiera que el mundo se acaba mañana, yo, hoy todavía, plantaría un árbol"</h3>
-      </ion-text>
-     
-    </ion-card-content>
   </ion-card>
 
   <ion-card>
       <ion-card-header>
             <ion-text color="success">
-              <h4>Seleccione Genero de su Avatar</h4>
+              <h4>Seleccione el servicio a usar</h4>
             </ion-text>
       </ion-card-header>
       
@@ -84,12 +66,12 @@
           <!-- Segment with secondary color -->
         <ion-segment (ionChange)="segmentChanged($event)" color="success" value="f">
         <ion-segment-button value="f" layout="icon-bottom">
-          <ion-icon name="woman-outline"></ion-icon>
-          <ion-label>F</ion-label>
+          <ion-icon name="bike"></ion-icon>
+          <ion-label>Taller</ion-label>
         </ion-segment-button>
         <ion-segment-button value="m" layout="icon-bottom">
-          <ion-icon name="man-outline"></ion-icon>
-          <ion-label>M</ion-label>
+          <ion-icon name="mechanical"></ion-icon>
+          <ion-label>Parqueadero</ion-label>
         </ion-segment-button>
         </ion-segment>
       </ion-card-content>
