@@ -3,8 +3,13 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content class="bg-menu">
         <ion-list id="inbox-list">
+<<<<<<< HEAD
           <ion-list-header>CICLISTA Estamos para ayudarte!</ion-list-header>
           <ion-note>¡Así ayudamos al planeta en dos ruedas!</ion-note>
+=======
+          <ion-list-header>TallKing</ion-list-header>
+          <ion-note>Busca parqueaderos y talleres cercanos a ti!!</ion-note>
+>>>>>>> a4cef09bdcb6a41b0a9526444292573cf8b70b32
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
