@@ -28,7 +28,12 @@ export class UserDashboardPage implements OnInit {
    signOut(){
      this.auth.signOut();
    } 
-
+   slideOpts = {
+    initialSlide: 1,
+    speed: 100,
+    slidesPerView: 1,
+    autoplay: true
+  };
 
    public segmentChanged (event: any): void {
     this.storage.set('icono', null);

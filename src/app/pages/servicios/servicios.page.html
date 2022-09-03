@@ -1,32 +1,23 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
       <ion-back-button text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>servicios</ion-title>
+    <ion-title>Tipos Servicios</ion-title>
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <img src="./assets/ele.jpeg" />
+    <h1>Reparacione y Mantenimiento</h1>
+    <img src="./assets/s1.jpg" />
   </ion-card>
   <ion-card>
-    <img src="./assets/func.jpeg" />
-  </ion-card>
-  <ion-card>
-    <img src="./assets/alumen.jpeg" />
-  </ion-card>
-  <ion-card>
-    <img src="./assets/pura.jpeg" />
-  </ion-card>
-  <ion-card>
-    <img src="./assets/grum.jpeg" />
-  </ion-card>
-  <ion-card>
-    <img src="./assets/distri.jpeg" />
+    <h1>Cambio de Partes y Repuestos</h1>
+    <img src="./assets/s2.jpg" />
   </ion-card>
 
+  <ion-item   [routerLink]="['/ciclista']" color="secondary"><ion-label class="ion-text-wrap"><h1><strong> Encuentra Talleres - Montallantas - Tiendas Biker TOCA Aquí</strong></h1>  </ion-label></ion-item>
 </ion-content>

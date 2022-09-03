@@ -8,7 +8,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class RutasService {
 
-  server: string = "https://dcrecicla.site/DCRecicla/rest/index.php/"; 
+  server: string = "https://sieit.net/TallKing/v1/tallkadm/rest/index.php/"; 
 
   constructor(public http : HttpClient) {
 

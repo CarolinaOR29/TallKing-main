@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-	<ion-title>Ruta - Recoleccion</ion-title>
+	<ion-title>Talleres & Parqueaderos</ion-title>
 	<ion-buttons slot="start">
 		<ion-menu-button></ion-menu-button>
 		
@@ -13,21 +13,21 @@
 </ion-header>
 
 <ion-content>
-	<ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+<!---->	<ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content></ion-refresher-content>
 	</ion-refresher>
   <ion-card>
 		<ion-card-content>
 			<div #directionsPanel id="directionsPanel">
 				<ion-item>
-					<ion-label>Hoja Ruta</ion-label>
-					<ion-select interface="popover"  placeholder="Hoja de ruta" (ionChange)="cambioHojaRuta($event)">
-						<ion-select-option *ngFor="let ruta of rutas"value="{{ruta.cod_ruta}}">{{ruta.rutacol}}</ion-select-option>
+					<ion-label>Servicios </ion-label>
+					<ion-select interface="popover"  placeholder="Servicios" (ionChange)="cambioHojaRuta($event)">
+						<ion-select-option *ngFor="let servicio of servicios"value="{{servicio.cod_servicio}}">{{servicio.nombre_servicio}}</ion-select-option>
 					</ion-select>
 				</ion-item>
  
 			</div>
-		</ion-card-content>
+		</ion-card-content> 
 	</ion-card>
 	
 	<div #map id="map"></div>  

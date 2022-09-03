@@ -13,13 +13,38 @@ export class RegisterPage implements OnInit {
   username: string = "";
   password: string = "";
   confirm_password: string = "";
+  mail: string = "";
 
+  ciclas :any = [
+      {
+        tipo :'RUTA'
+      },
+      {
+        tipo:'BMX'
+      },
+      {
+        tipo:'Infantil'
+      },
+      {
+        tipo:'Clasica'
+      },
+      {
+        tipo:'MTB'
+      },
+      {
+        tipo:'TODO TERRENO'
+      },
+      {
+        tipo:'URBANAS'
+      }
+
+  ];
   constructor(
     private router: Router,
   	private postServ: PostService,
   	public toastCtrl: ToastController
   ) { }
- 
+  
   ngOnInit() {
   }
 
@@ -27,19 +52,32 @@ export class RegisterPage implements OnInit {
     // validation done
     if(this.username==""){
         const toast = await this.toastCtrl.create({
-          message: 'Dirección de correo invalida.',
+          message: 'Nombre de usuario es obligatorio.',
           duration: 3000
         });
         toast.present();
     }else if(this.password==""){
         const toast = await this.toastCtrl.create({
-          message: 'Contraseña Invalida',
+          message: 'Contraseña tiene que contener almenos 6 caracteres entre numeros y letras',
           duration: 3000
         });
         toast.present();
-    }else if(this.password!=this.confirm_password){
+    } else if(this.mail==""){
+      const toast = await this.toastCtrl.create({
+        message: 'Nombre de usuario es obligatorio.',
+        duration: 3000
+      });
+      toast.present();
+  }else if(this.password.length < 5){
+      const toast = await this.toastCtrl.create({
+        message: 'Contraseña tiene que contener almenos 6 caracteres entre numeros y letras',
+        duration: 3000
+      });
+      toast.present();
+  }
+    else if(this.password!=this.confirm_password){
         const toast = await this.toastCtrl.create({
-          message: 'Contraseña no coincide',
+          message: 'Contraseñas no coinciden',
           duration: 3000
         });
         toast.present();
@@ -56,8 +94,8 @@ export class RegisterPage implements OnInit {
         if(data['success']){
           this.router.navigate(['/login']);
           const toast = await this.toastCtrl.create({
-            message: 'Registro exitoso',
-            duration: 3000
+            message: 'Registro exitoso, ya puede Ingresar',
+            duration: 6000
           });
           toast.present();
         }else{

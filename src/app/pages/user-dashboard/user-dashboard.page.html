@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="warning">
     <ion-buttons slot="end"> 
       <ion-button (click)="signOut()">
         <ion-icon name="log-out"></ion-icon>
@@ -11,90 +11,96 @@
       <ion-menu-button></ion-menu-button>
      
     </ion-buttons>
-    <ion-title> Ciudadano </ion-title>
+    <ion-title> Ciudadano En Dos Ruedas </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-header translucent>
   <ion-toolbar>
-    <ion-title>Recicla, Recoge, Reutiliza</ion-title>
+    <ion-title> Talleres, Accesorios y Parqueaderos</ion-title>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content fullscreen class="ion-padding" >
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content></ion-refresher-content>
 	</ion-refresher>
-  <ion-slides>
+  <ion-slides pager="true"  [options]="slideOpts" autoplay>
 
     <ion-slide>
       <div class="slide">
         <img src="./assets/slide.jpg"/>
         <h2>Bienvenido</h2>
-        <p>La <b>vida</b> es una, vive y cuida el ambiente.</p>
+        <h3>Recorre la ciudad tranquilo, La <b>vida</b> es una, vive y cuida el ambiente.</h3>
       </div>
     </ion-slide>
 
     <ion-slide>
       <img src="./assets/slide-2.jpg"/>
-      <h2>Que es DCRecicla?</h2>
-      <p><b>DC Recicla</b> es la alternativa perfecta para ayudar a todos los usuarios sistema de Aseo.</p>
+      <h2>Que es TALLER KING?</h2>
+      <h3><b>TALLER KING </b> es la alternativa perfecta para ayudar a todos los biciusuarios.</h3>
     </ion-slide>
 
     <ion-slide>
       <img src="./assets/slide-3.jpg"/>
-      <h2>Necesita reportar algun problema?</h2>
-      <p><b>DC Recicla</b> lo ayuda a ponerse en contacto con la empresa, para cualquier tipo de denuncia ciudadanas.</p>
+      <h2>Necesitas Parqueadero?</h2>
+      <h3><b>Taller KING</b> lo ayuda a ver los puntos en la ciudad, para conseguir un taller o tienda cerca a ti.</h3>
     </ion-slide>
 
     <ion-slide>
       <img src="./assets/slide-4.jpg"/>
-      <h2>Listo para Salvar el mundo?</h2>
+      <h1>Listo para Salvar al Mundo de Rolling?</h1>
       <ion-button fill="clear">Ir <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
     </ion-slide>
 
   </ion-slides>
+  <ion-grid>
+  <ion-row>
+    <ion-col size="6">
+      <ion-card>
+        <ion-card-header>
+              <ion-text color="success">
+                <h4>Seleccione su Genero para mejores recomendaciones</h4>
+              </ion-text>
+        </ion-card-header>
+        
+        <ion-card-content>
+            <!-- Segment with secondary color -->
+          <ion-segment (ionChange)="segmentChanged($event)" color="success" value="f">
+          <ion-segment-button value="f" layout="icon-bottom">
+            <ion-icon name="woman-outline"></ion-icon>
+            <ion-label>F</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="m" layout="icon-bottom">
+            <ion-icon name="man-outline"></ion-icon>
+            <ion-label>M</ion-label>
+          </ion-segment-button>
+          </ion-segment>
+        </ion-card-content>
+    </ion-card>
+    </ion-col>
 
+    <ion-col size="6">
+      <ion-card>  
+   
+        <ion-card-header>
+          <ion-text color="warning">
+            <h2>El Mejor Paisaje se ve en una aventura sobre ruedas.</h2>
+          </ion-text>
+          
+          <ion-card-title>El poder es de todos!</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text color="warning">
+            <h2>"las aventuras te esperan"</h2>
+          </ion-text>
+         
+        </ion-card-content>
+      </ion-card>
+    
+    </ion-col>
 
-  <ion-card>
-    <img src="./assets/medioamb.jpg" />
-    <ion-card-header>
-      <ion-text color="secondary">
-        <h2>El Mejor Paisaje Debe Ser Verde</h2>
-      </ion-text>
-      
-      <ion-card-title>El deber es de todos!</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-text color="secondary">
-        <h3>"Si supiera que el mundo se acaba mañana, yo, hoy todavía, plantaría un árbol"</h3>
-      </ion-text>
-     
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-      <ion-card-header>
-            <ion-text color="success">
-              <h4>Seleccione Genero de su Avatar</h4>
-            </ion-text>
-      </ion-card-header>
-      
-      <ion-card-content>
-          <!-- Segment with secondary color -->
-        <ion-segment (ionChange)="segmentChanged($event)" color="success" value="f">
-        <ion-segment-button value="f" layout="icon-bottom">
-          <ion-icon name="woman-outline"></ion-icon>
-          <ion-label>F</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="m" layout="icon-bottom">
-          <ion-icon name="man-outline"></ion-icon>
-          <ion-label>M</ion-label>
-        </ion-segment-button>
-        </ion-segment>
-      </ion-card-content>
-  </ion-card>
-
+  </ion-row>
+    </ion-grid>
 </ion-content>
 
 

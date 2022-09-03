@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
 
 declare var google;
 var miruta;
-
+ 
 interface Marker {
   position: {
     lat: number,
@@ -35,26 +35,26 @@ export class RutaPage implements OnInit {
   
   hoja_ruta_s : 0;
   markers: Marker[]
-  rutas: any[] = [
+  servicios: any[] = [
     {
-      "cod_ruta": "1",
-      "rutacol": "El poa - A. granados "
+      "cod_servicio": "1",
+      "nombre_servicio": "Talleres Cicla"
   },
   {
-      "cod_ruta": "4",
-      "rutacol": "Portico - Tibabuyes "
+      "cod_servicio": "4",
+      "nombre_servicio": "Talleres Moto "
   },
   {
-      "cod_ruta": "14",
-      "rutacol": "Trinitaria -Aures I"
+      "cod_servicio": "14",
+      "nombre_servicio": "Parqueaderos"
   },
   {
-      "cod_ruta": "16",
-      "rutacol": "La campiña - Los pinos"
+      "cod_servicio": "16",
+      "nombre_servicio": "Monta Llantas"
   },
   {
-      "cod_ruta": "17",
-      "rutacol": "El refus - Turingia"
+      "cod_servicio": "17",
+      "nombre_servicio": "Tiendas Verdes"
   }
   ];
   
@@ -104,10 +104,11 @@ public cambioHojaRuta (event: any): void {
       console.log(JSON.stringify(event));
     console.log(JSON.stringify(event.detail.value));
     
-    this.getGeolocation();
     this.obtenerPuntos();
+    this.getGeolocation();
     
-  }, 1000);
+    
+  }, 2000);
  
   
   }
@@ -138,7 +139,7 @@ getGeolocation(){
   
 
 	  this.map = new google.maps.Map(mapEle, {
-      zoom: 15,
+      zoom: 14,
       center: myLatLng,
       mapTypeId: 'terrain'
   
@@ -151,12 +152,17 @@ getGeolocation(){
     
   google.maps.event.addListenerOnce(this.map, 'idle', () => {
       
-
+    var icon = {
+      url: "assets/markers/biketi.png", // url
+      scaledSize: new google.maps.Size(80, 80), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+  };
 
     var marker = new google.maps.Marker({
       position: myLatLng,
-      title: 'Hello World!',
-      icon:'assets/markers/truck.png'
+      title: 'Cicla',
+      icon:'assets/markers/biketi.png'
     });
 
     /*var marker = {
@@ -166,21 +172,21 @@ getGeolocation(){
     };*/
     //this.addMarker(marker);
     marker.setMap(this.map)
-    
+    this.renderMarkers();
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data) => {
      console.log("watching",data);   
       
       const myLatLng = {lat: data.coords.latitude   ,lng: data.coords.longitude};
       
-      this.enviarCoordenadas(data.coords.latitude,data.coords.longitude);
+      //this.enviarCoordenadas(data.coords.latitude,data.coords.longitude);
       marker.setPosition( myLatLng );
        //console.log(marker)
       });
       
 
     mapEle.classList.add('show-map');
-    //this.renderMarkers();
+ 
     
   });
 
@@ -309,7 +315,7 @@ async obtenerPuntos(){
     
 
     let body = {      
-      id_ruta: sel_ruta
+      id_ruta: this.hoja_ruta_s
     };
 
 
@@ -318,7 +324,7 @@ console.log(body);
 return this.RutasService.postData(body, 'restserver/obtenerParadasRuta').subscribe(async result =>{
 
   console.log(result);
-      
+  this.markers = result['datos'];
     if(result['status'] == 200){
         if(result['mensaje'] == "ok"){
 
@@ -349,6 +355,7 @@ return this.RutasService.postData(body, 'restserver/obtenerParadasRuta').subscri
 
 renderMarkers() {
   this.markers.forEach(marker => {
+    console.log(marker);
     this.addMarker(marker);
   });
 }

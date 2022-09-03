@@ -30,13 +30,13 @@ export class LoginPage  implements OnInit{
     // validation done
     if(this.user.email==""){
       const toast = await this.toastCtrl.create({
-        message: 'Dirección de correo no valida.',
+        message: 'Campo Usuario es requerido.',
         duration: 3000
       }); 
       toast.present();
     }else if(this.user.pw==""){
         const toast = await this.toastCtrl.create({
-          message: 'Contraseña no valida.',
+          message: 'Ingrese una Contraseña .',
           duration: 3000
         });
         toast.present();

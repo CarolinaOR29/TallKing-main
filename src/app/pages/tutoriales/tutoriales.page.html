@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
       <ion-back-button text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Tutoriales</ion-title>
+    <ion-title>PArqueaderos</ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -23,20 +23,20 @@
   </ion-header>
 
   <ion-card>
-    <img src="./assets/manualidad.jpg" />
+    <img src="./assets/p1.jpg" />
     
     <ion-card-header>
       <ion-text color="secondary">
-        <h2>Dale un nuevo uso a todo.</h2>
+        <h2>Te Damos la ubicacion de un lugar seguro para tu bici.</h2>
       </ion-text>
     
     </ion-card-header>
-    <img src="./assets/creatividad.jpg" />
+    <img src="./assets/p2.jpg" />
     <ion-card-content>
       <ion-text color="secondary">
         <div id="container">
           <strong class="capitalize">{{ folder }}</strong>
-          <p>Encuentra <a target="_blank" rel="noopener noreferrer" href="https://dcrecicla.site/DCRecicla/site/tutoriales">Tutoriales Acá</a></p>
+          <ion-item   [routerLink]="['/ciclista']" color="secondary"><ion-label> <h1><strong>Encuentra parqueaderos TOCA Aquí </strong></h1> </ion-label></ion-item>
         </div>
        
        

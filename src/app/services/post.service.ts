@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 })
 export class PostService {
 
-  server: string = "https://dcrecicla.site/DCRecicla/rest/index.php/"; // default
+  server: string = "https://sieit.net/TallKing/v1/tallkadm/rest/index.php/"; // default
 	// if you test in real device "http://localhost" change use the your IP	
     // server: string = "http://192.199.122.100/IONIC4_CRUD_LOGINREGIS_PHP_MYSQL/server_api/"; 
 

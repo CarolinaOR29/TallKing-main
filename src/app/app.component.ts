@@ -18,32 +18,38 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Servicios',
+      title: 'Talleres',
       url: '/servicios',
-      icon: 'leaf'
+      icon: 'construct'
     },
     {
-      title: 'Manualidades',
+      title: 'TIPS',
+      url: '/tips',
+      icon: 'construct'
+    },
+    {
+      title: 'HURTO y PERDIDA',
+      url: '/seguridad',
+      icon: 'construct'
+    },
+    {
+      title: 'Parqueaderos',
       url: '/tutoriales',
-      icon: 'heart'
+      icon: 'bicycle'
     },
     {
-      title: 'Denuncia',
-      url: '/denuncia',
+      title: 'Preguntas',
+      url: '/preguntas',
       icon: 'megaphone'
     },
     {
-      title: 'Ruta Recoleccion',
-      url: '/conductor',
+      title: 'Tiendas & Servicios MAPA',
+      url: '/ciclista',
       icon: 'map'
     },
-    {
-      title: 'vista conductor',
-      url: '/ruta',
-      icon: 'map'
-    }
+   
   ];
-  public labels = ['Siguenos en nuestras redes!', 'Aportar', 'Servicio Social', 'Transmilenio', 'Recompensas','Califiquenos'];
+  public labels = [ 'Unirse', 'Servicios', 'Consultas', 'Recompensas','Califiquenos', 'Siguenos en redes!'];
   public sociales = ['Facebook','Twitter','Youtube'];
   constructor(
     private platform: Platform,
